@@ -134,6 +134,24 @@ namespace WindowsFormsApplication1
 			textBox1.Text = textBox1.Text.Remove(l);
 		}
 
-		
+		private void sq_root_Click(object sender, EventArgs e)
+		{
+			button_handler(operations.sq_root);
+		}
+
+		private void root_Click(object sender, EventArgs e)
+		{
+			button_handler(operations.root);
+		}
+
+		private void sq_Click(object sender, EventArgs e)
+		{
+			button_handler(operations.sq);
+		}
+
+		private void exponent_Click(object sender, EventArgs e)
+		{
+			button_handler(operations.exponent);
+		}
 	}
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace WindowsFormsApplication1
 {
 
-	enum operations { empty, sum, dif, mult, div };
+	enum operations { empty, sum, dif, mult, div, sq_root, root, sq, exponent };
 
 	class Calculate
 	{
@@ -63,7 +63,30 @@ namespace WindowsFormsApplication1
 						set_second(0);
 					}
 					break;
-
+				case (operations.sq_root):
+					if(this.first >= 0)
+					{
+						this.first = Math.Sqrt(this.first) ;
+						set_second(0);
+					}
+					break;
+				case (operations.root):
+					if ((this.first <= 0) && ((this.second % 2) != 0)) ;
+					else
+					{
+						this.second = Math.Pow(this.second, -1);
+						this.first = Math.Pow(this.first, this.second);
+						set_second(0);
+					}
+					break;
+				case (operations.sq):
+					this.first = Math.Pow(this.first, 2);
+					set_second(0);
+					break;
+				case (operations.exponent):
+					this.first = Math.Pow(this.first, this.second);
+					set_second(0);
+					break;
 			}
 		}
 
@@ -79,6 +102,10 @@ namespace WindowsFormsApplication1
 			{
 				set_first(value);
 				set_oper(operation);
+				if(operation == operations.sq_root || operation == operations.sq)
+				{
+					f_calculate();
+				}
 				return this.first;
 			}
 			if (this.operation != operations.empty)
