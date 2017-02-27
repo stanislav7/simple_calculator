@@ -153,5 +153,17 @@ namespace WindowsFormsApplication1
 		{
 			button_handler(operations.exponent);
 		}
+
+		private void pos_neg_Click(object sender, EventArgs e)
+		{
+			if (textBox1.Text.StartsWith("-"))
+			{
+				textBox1.Text = textBox1.Text.Remove(0, 1);
+			}
+			else
+			{
+				textBox1.Text = String.Concat("-", textBox1.Text);
+			}
+		}
 	}
 }

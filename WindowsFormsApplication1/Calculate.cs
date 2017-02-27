@@ -71,13 +71,9 @@ namespace WindowsFormsApplication1
 					}
 					break;
 				case (operations.root):
-					if ((this.first <= 0) && ((this.second % 2) != 0)) ;
-					else
-					{
-						this.second = Math.Pow(this.second, -1);
-						this.first = Math.Pow(this.first, this.second);
-						set_second(0);
-					}
+					this.second = Math.Pow(this.second, -1);
+					this.first = Math.Pow(this.first, this.second);
+					set_second(0);
 					break;
 				case (operations.sq):
 					this.first = Math.Pow(this.first, 2);

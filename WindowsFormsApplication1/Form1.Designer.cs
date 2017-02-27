@@ -54,6 +54,7 @@
 			this.button9 = new System.Windows.Forms.Button();
 			this.button6 = new System.Windows.Forms.Button();
 			this.button8 = new System.Windows.Forms.Button();
+			this.pos_neg = new System.Windows.Forms.Button();
 			Go = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -148,6 +149,7 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.pos_neg);
 			this.groupBox1.Controls.Add(this.button11);
 			this.groupBox1.Controls.Add(this.backspace);
 			this.groupBox1.Controls.Add(this.clear);
@@ -345,6 +347,16 @@
 			this.button8.UseVisualStyleBackColor = true;
 			this.button8.Click += new System.EventHandler(this.button8_Click);
 			// 
+			// pos_neg
+			// 
+			this.pos_neg.Location = new System.Drawing.Point(109, 144);
+			this.pos_neg.Name = "pos_neg";
+			this.pos_neg.Size = new System.Drawing.Size(45, 25);
+			this.pos_neg.TabIndex = 18;
+			this.pos_neg.Text = "+/-";
+			this.pos_neg.UseVisualStyleBackColor = true;
+			this.pos_neg.Click += new System.EventHandler(this.pos_neg_Click);
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,6 +401,7 @@
 		private System.Windows.Forms.Button root;
 		private System.Windows.Forms.Button sq_root;
 		private System.Windows.Forms.GroupBox groupBox2;
+		private System.Windows.Forms.Button pos_neg;
 	}
 }
 
