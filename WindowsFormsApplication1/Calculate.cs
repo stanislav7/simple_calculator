@@ -109,6 +109,10 @@ namespace WindowsFormsApplication1
 				set_second(value);
 				f_calculate();
 				set_oper(operation);
+				if (operation == operations.sq_root || operation == operations.sq)
+				{
+					f_calculate();
+				}
 				return this.first;
 			}
 			else
