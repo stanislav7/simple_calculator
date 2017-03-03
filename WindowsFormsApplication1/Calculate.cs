@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace WindowsFormsApplication1
 {
 
-	enum operations { empty, sum, dif, mult, div, sq_root, root, sq, exponent };
+	enum operations { empty, sum, dif, mult, div, sq_root, root, sq, exponent, sin, cos, tg, ctg };
 
 	class Calculate
 	{
@@ -83,6 +83,23 @@ namespace WindowsFormsApplication1
 					this.first = Math.Pow(this.first, this.second);
 					set_second(0);
 					break;
+				case (operations.sin):
+					this.first = this.first * Math.PI / 180;
+					this.first = Math.Sin(this.first);
+					break;
+				case (operations.cos):
+					this.first = this.first * Math.PI / 180;
+					this.first = Math.Cos(this.first);
+					break;
+				case (operations.tg):
+					this.first = this.first * Math.PI / 180;
+					this.first = Math.Tan(this.first);
+					break;
+				case (operations.ctg):
+					this.first = this.first * Math.PI / 180;
+					this.first = Math.Tan(this.first);
+					this.first = Math.Pow(this.first, -1);
+					break;
 			}
 		}
 
@@ -94,11 +111,23 @@ namespace WindowsFormsApplication1
 
 		private double logik(double value, operations operation)
 		{
+			bool unarn;
+
+			if (operation == operations.sq ||
+				operation == operations.sq_root ||
+				operation == operations.sin ||
+				operation == operations.cos ||
+				operation == operations.tg ||
+				operation == operations.ctg)
+			{
+				unarn = true;
+			}
+			else unarn = false;
 			if (this.first == 0)
 			{
 				set_first(value);
 				set_oper(operation);
-				if(operation == operations.sq_root || operation == operations.sq)
+				if(unarn)
 				{
 					f_calculate();
 				}
@@ -109,7 +138,7 @@ namespace WindowsFormsApplication1
 				set_second(value);
 				f_calculate();
 				set_oper(operation);
-				if (operation == operations.sq_root || operation == operations.sq)
+				if (unarn)
 				{
 					f_calculate();
 				}
@@ -119,7 +148,7 @@ namespace WindowsFormsApplication1
 			{
 				if(value != this.first)
 				{
-					this.first = value;
+					set_first(value);
 				}
 				set_oper(operation);
 				return this.first;

@@ -28,15 +28,22 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.Button Go;
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.ctg = new System.Windows.Forms.Button();
+			this.tg = new System.Windows.Forms.Button();
+			this.cos = new System.Windows.Forms.Button();
+			this.sin = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.sq_root = new System.Windows.Forms.Button();
 			this.exponent = new System.Windows.Forms.Button();
 			this.root = new System.Windows.Forms.Button();
 			this.sq = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.pos_neg = new System.Windows.Forms.Button();
 			this.button11 = new System.Windows.Forms.Button();
 			this.backspace = new System.Windows.Forms.Button();
 			this.clear = new System.Windows.Forms.Button();
@@ -54,9 +61,10 @@
 			this.button9 = new System.Windows.Forms.Button();
 			this.button6 = new System.Windows.Forms.Button();
 			this.button8 = new System.Windows.Forms.Button();
-			this.pos_neg = new System.Windows.Forms.Button();
+			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
 			Go = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
+			this.groupBox3.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
@@ -87,12 +95,70 @@
 			// panel1
 			// 
 			this.panel1.AutoSize = true;
+			this.panel1.Controls.Add(this.groupBox3);
 			this.panel1.Controls.Add(this.groupBox2);
 			this.panel1.Controls.Add(this.groupBox1);
 			this.panel1.Location = new System.Drawing.Point(12, 65);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(326, 290);
+			this.panel1.Size = new System.Drawing.Size(414, 290);
 			this.panel1.TabIndex = 1;
+			// 
+			// groupBox3
+			// 
+			this.groupBox3.Controls.Add(this.ctg);
+			this.groupBox3.Controls.Add(this.tg);
+			this.groupBox3.Controls.Add(this.cos);
+			this.groupBox3.Controls.Add(this.sin);
+			this.groupBox3.Location = new System.Drawing.Point(271, 4);
+			this.groupBox3.Name = "groupBox3";
+			this.groupBox3.Size = new System.Drawing.Size(140, 183);
+			this.groupBox3.TabIndex = 16;
+			this.groupBox3.TabStop = false;
+			this.groupBox3.Text = "groupBox3";
+			// 
+			// ctg
+			// 
+			this.ctg.Location = new System.Drawing.Point(7, 111);
+			this.ctg.Name = "ctg";
+			this.ctg.Size = new System.Drawing.Size(75, 23);
+			this.ctg.TabIndex = 3;
+			this.ctg.Text = "ctg";
+			this.toolTip1.SetToolTip(this.ctg, "ввод в градусах");
+			this.ctg.UseVisualStyleBackColor = true;
+			this.ctg.Click += new System.EventHandler(this.ctg_Click);
+			// 
+			// tg
+			// 
+			this.tg.Location = new System.Drawing.Point(7, 80);
+			this.tg.Name = "tg";
+			this.tg.Size = new System.Drawing.Size(75, 23);
+			this.tg.TabIndex = 2;
+			this.tg.Text = "tg";
+			this.toolTip1.SetToolTip(this.tg, "ввод в градусах");
+			this.tg.UseVisualStyleBackColor = true;
+			this.tg.Click += new System.EventHandler(this.tg_Click);
+			// 
+			// cos
+			// 
+			this.cos.Location = new System.Drawing.Point(7, 49);
+			this.cos.Name = "cos";
+			this.cos.Size = new System.Drawing.Size(75, 23);
+			this.cos.TabIndex = 1;
+			this.cos.Text = "cos";
+			this.toolTip1.SetToolTip(this.cos, "ввод в градусах");
+			this.cos.UseVisualStyleBackColor = true;
+			this.cos.Click += new System.EventHandler(this.cos_Click);
+			// 
+			// sin
+			// 
+			this.sin.Location = new System.Drawing.Point(7, 18);
+			this.sin.Name = "sin";
+			this.sin.Size = new System.Drawing.Size(75, 23);
+			this.sin.TabIndex = 0;
+			this.sin.Text = "sin";
+			this.toolTip1.SetToolTip(this.sin, "ввод в градусах");
+			this.sin.UseVisualStyleBackColor = true;
+			this.sin.Click += new System.EventHandler(this.sin_Click);
 			// 
 			// groupBox2
 			// 
@@ -174,6 +240,16 @@
 			this.groupBox1.TabIndex = 14;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "groupBox1";
+			// 
+			// pos_neg
+			// 
+			this.pos_neg.Location = new System.Drawing.Point(109, 144);
+			this.pos_neg.Name = "pos_neg";
+			this.pos_neg.Size = new System.Drawing.Size(45, 25);
+			this.pos_neg.TabIndex = 18;
+			this.pos_neg.Text = "+/-";
+			this.pos_neg.UseVisualStyleBackColor = true;
+			this.pos_neg.Click += new System.EventHandler(this.pos_neg_Click);
 			// 
 			// button11
 			// 
@@ -347,16 +423,6 @@
 			this.button8.UseVisualStyleBackColor = true;
 			this.button8.Click += new System.EventHandler(this.button8_Click);
 			// 
-			// pos_neg
-			// 
-			this.pos_neg.Location = new System.Drawing.Point(109, 144);
-			this.pos_neg.Name = "pos_neg";
-			this.pos_neg.Size = new System.Drawing.Size(45, 25);
-			this.pos_neg.TabIndex = 18;
-			this.pos_neg.Text = "+/-";
-			this.pos_neg.UseVisualStyleBackColor = true;
-			this.pos_neg.Click += new System.EventHandler(this.pos_neg_Click);
-			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -367,6 +433,7 @@
 			this.Name = "Form1";
 			this.Text = "Form1";
 			this.panel1.ResumeLayout(false);
+			this.groupBox3.ResumeLayout(false);
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
 			this.ResumeLayout(false);
@@ -402,6 +469,12 @@
 		private System.Windows.Forms.Button sq_root;
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.Button pos_neg;
+		private System.Windows.Forms.GroupBox groupBox3;
+		private System.Windows.Forms.Button ctg;
+		private System.Windows.Forms.Button tg;
+		private System.Windows.Forms.Button cos;
+		private System.Windows.Forms.Button sin;
+		private System.Windows.Forms.ToolTip toolTip1;
 	}
 }
 
