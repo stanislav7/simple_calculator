@@ -165,5 +165,25 @@ namespace WindowsFormsApplication1
 				textBox1.Text = String.Concat("-", textBox1.Text);
 			}
 		}
+
+		private void sin_Click(object sender, EventArgs e)
+		{
+			button_handler(operations.sin);
+		}
+
+		private void cos_Click(object sender, EventArgs e)
+		{
+			button_handler(operations.cos);
+		}
+
+		private void tg_Click(object sender, EventArgs e)
+		{
+			button_handler(operations.tg);
+		}
+
+		private void ctg_Click(object sender, EventArgs e)
+		{
+			button_handler(operations.ctg);
+		}
 	}
 }
